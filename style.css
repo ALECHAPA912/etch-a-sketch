@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.square {
+    background-color: grey;
+    border: 1px solid black;
+    width: 16px;
+    height: 16px;
+}
+
+button {
+    font-size: larger;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 3px;
+}
