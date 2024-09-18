@@ -25,7 +25,8 @@ function createSquares(squaresPerSide) {
         grid.appendChild(square);
 
         square.addEventListener("mouseover", function() {
-            square.style.backgroundColor = "green";
+            let rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            square.style.backgroundColor = rndCol;
         });
     }
 
@@ -43,7 +44,6 @@ button.addEventListener("click", () => {
 
 
   
-//  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-//  document.body.style.backgroundColor = rndCol;
+
 
 
