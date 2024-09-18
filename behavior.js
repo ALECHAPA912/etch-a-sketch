@@ -2,6 +2,10 @@ const grid = document.querySelector("#grid");
 const button = document.querySelector("button");
 let numberLastGrid = 0;
 
+function random(number) {   //  returns a number beetween 0 and the argument
+    return Math.floor(Math.random() * (number + 1));
+}
+
 function deleteSquares() {
     for(let i = 0; i < numberLastGrid; i++) {
         let square = document.querySelector(".square");
@@ -13,13 +17,18 @@ function createSquares(squaresPerSide) {
     let gridWidth = squaresPerSide * 16;
     let numberOfSquares = squaresPerSide * squaresPerSide;
     numberLastGrid = numberOfSquares;
-    grid.style.width = gridWidth + "px"; 
+    grid.style.width = gridWidth + "px";
     
     for (let i = 0; i < numberOfSquares; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
         grid.appendChild(square);
+
+        square.addEventListener("mouseover", function() {
+            square.style.backgroundColor = "green";
+        });
     }
+
 }
 
 button.addEventListener("click", () => {
@@ -31,4 +40,10 @@ button.addEventListener("click", () => {
 
     else alert("please enter a correct value (beetween 1-100)");
 });
+
+
+  
+//  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+//  document.body.style.backgroundColor = rndCol;
+
 
