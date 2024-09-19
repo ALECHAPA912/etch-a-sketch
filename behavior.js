@@ -23,11 +23,20 @@ function createSquares(squaresPerSide) {
         const square = document.createElement("div");
         square.classList.add("square");
         grid.appendChild(square);
+        let squareOpacity = 1;
+        let numberOfMouseOver = 0;
 
         square.addEventListener("mouseover", function() {
-            let rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-            square.style.backgroundColor = rndCol;
+            if (numberOfMouseOver == 0) {
+                let rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+                square.style.backgroundColor = rndCol;
+            }
+            else if (numberOfMouseOver <= 10) {
+                square.style.opacity = squareOpacity - (numberOfMouseOver * 0.1);
+            }
+            numberOfMouseOver++;
         });
+
     }
 
 }
